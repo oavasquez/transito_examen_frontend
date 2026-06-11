@@ -11,7 +11,7 @@ Abre `index.html` en el navegador. El progreso se guarda automaticamente con `lo
 1. Sube estos archivos al repositorio.
 2. En GitHub entra a `Settings > Pages`.
 3. En `Build and deployment`, selecciona `Deploy from a branch`.
-4. Elige la rama `main` y la carpeta `/root`.
+4. Elige la rama `main` y la carpeta `/docs`.
 5. Guarda la configuracion.
 
 La pagina quedara disponible en la URL que GitHub Pages indique.
