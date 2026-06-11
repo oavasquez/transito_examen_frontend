@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Examen Ley de Transito</title>
+    <meta name="description" content="Practica interactiva para el examen de la Ley de Transito.">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script defer src="questions-data.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="exam-panel" aria-labelledby="app-title">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Practica interactiva</p>
+            <h1 id="app-title">Examen Ley de Transito</h1>
+          </div>
+          <div class="score-box" aria-live="polite">
+            <span id="score-value">0</span>
+            <small>puntos</small>
+          </div>
+        </header>
+
+        <section id="start-screen" class="screen">
+          <div class="intro-grid">
+            <div>
+              <h2>150 preguntas de seleccion unica</h2>
+              <p>
+                Responde una pregunta a la vez. La pagina guarda tu avance en este navegador para que puedas continuar despues.
+              </p>
+            </div>
+            <div class="stats">
+              <div>
+                <strong id="total-questions">150</strong>
+                <span>preguntas</span>
+              </div>
+              <div>
+                <strong id="saved-progress">0%</strong>
+                <span>avance guardado</span>
+              </div>
+            </div>
+          </div>
+          <div class="actions">
+            <button id="continue-btn" class="primary-btn" type="button">Continuar</button>
+            <button id="new-btn" class="ghost-btn" type="button">Nuevo intento</button>
+          </div>
+        </section>
+
+        <section id="quiz-screen" class="screen hidden" aria-live="polite">
+          <div class="progress-wrap">
+            <div class="progress-label">
+              <span id="question-counter">Pregunta 1 de 150</span>
+              <span id="progress-percent">0%</span>
+            </div>
+            <div class="progress-track">
+              <div id="progress-bar" class="progress-bar"></div>
+            </div>
+          </div>
+
+          <div class="question-meta">
+            <span id="block-label">Bloque</span>
+            <span id="topic-label">Tema</span>
+            <span id="article-label">Articulo</span>
+          </div>
+
+          <h2 id="question-text" class="question-text"></h2>
+          <div id="options-list" class="options-list"></div>
+
+          <div id="feedback" class="feedback hidden"></div>
+          <div class="quiz-footer">
+            <button id="prev-btn" class="ghost-btn" type="button">Anterior</button>
+            <button id="next-btn" class="primary-btn" type="button" disabled>Siguiente</button>
+          </div>
+        </section>
+
+        <section id="result-screen" class="screen hidden">
+          <div class="result-hero">
+            <p class="eyebrow">Resultado final</p>
+            <h2 id="result-title">Examen completado</h2>
+            <div class="result-score">
+              <span id="final-score">0</span>
+              <small id="final-detail">de 150 correctas</small>
+            </div>
+          </div>
+          <div class="result-grid">
+            <div>
+              <strong id="correct-count">0</strong>
+              <span>correctas</span>
+            </div>
+            <div>
+              <strong id="wrong-count">0</strong>
+              <span>incorrectas</span>
+            </div>
+            <div>
+              <strong id="final-percent">0%</strong>
+              <span>puntaje</span>
+            </div>
+          </div>
+          <div class="actions">
+            <button id="review-btn" class="primary-btn" type="button">Revisar respuestas</button>
+            <button id="restart-btn" class="ghost-btn" type="button">Reiniciar</button>
+          </div>
+        </section>
+
+        <section id="review-screen" class="screen hidden">
+          <div class="review-header">
+            <div>
+              <p class="eyebrow">Revision</p>
+              <h2>Preguntas falladas</h2>
+            </div>
+            <button id="back-result-btn" class="ghost-btn" type="button">Volver</button>
+          </div>
+          <div id="review-list" class="review-list"></div>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
