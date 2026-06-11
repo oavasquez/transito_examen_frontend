@@ -3,6 +3,12 @@
   const questions = window.EXAM_QUESTIONS || [];
   const questionsById = new Map(questions.map((question) => [question.id, question]));
   const letters = ["A", "B", "C", "D"];
+  const optionSymbols = {
+    A: "▲",
+    B: "◆",
+    C: "●",
+    D: "■",
+  };
 
   const state = {
     index: 0,
@@ -156,10 +162,10 @@
 
     letters.forEach((letter) => {
       const button = document.createElement("button");
-      button.className = "option-btn";
+      button.className = `option-btn option-${letter.toLowerCase()}`;
       button.type = "button";
       button.dataset.letter = letter;
-      button.innerHTML = `<span class="option-letter">${letter}</span><span>${current.options[letter]}</span>`;
+      button.innerHTML = `<span class="option-letter">${optionSymbols[letter]}</span><span>${current.options[letter]}</span>`;
       button.addEventListener("click", () => selectAnswer(letter));
 
       if (mistakes.includes(letter)) {
